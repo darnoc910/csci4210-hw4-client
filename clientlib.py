@@ -325,7 +325,7 @@ class Client:
                 # notify socket_reader that we're done reading
                 self._cond.notify()
                 formatted = _format_response(resp)
-                if resp != "OK!":
+                if resp != b"OK!\n":
                     self.waiting = False
                     return formatted
             self.waiting = False
